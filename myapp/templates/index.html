@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Technical Review Test</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      background: #f0f4f8;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
+    .counter {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 1.2em;
+      color: #27ae60;
+      font-weight: bold;
+    }
+    .log-container {
+      max-height: 400px;
+      overflow-y: auto;
+      border-radius: 10px;
+      background: #ffffff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 10px;
+    }
+    .entry {
+      padding: 12px 15px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+      background: linear-gradient(90deg, #e3f2fd, #ffffff);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .entry:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+    .ip {
+      font-weight: bold;
+      color: #2980b9;
+      display: block;
+    }
+    .timestamp {
+      font-size: 0.9em;
+      color: #555;
+      display: block;
+      margin-top: 2px;
+    }
+    .ua {
+      font-size: 0.85em;
+      color: #8e44ad;
+      margin-top: 4px;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      white-space: normal;
+    }
+    /* Scrollbar styling */
+    .log-container::-webkit-scrollbar {
+      width: 8px;
+    }
+    .log-container::-webkit-scrollbar-track {
+      background: #f0f0f0;
+      border-radius: 4px;
+    }
+    .log-container::-webkit-scrollbar-thumb {
+      background: #bbb;
+      border-radius: 4px;
+    }
+    .log-container::-webkit-scrollbar-thumb:hover {
+      background: #888;
+    }
+  </style>
+</head>
+<body>
+  <h1>Logged and saved IP Address from visiting the page</h1>
+  <div class="counter">IPv4 Entries: {{ ipv4_count }}</div>
+  <div class="log-container">
+    {% for ip, ts, ua in visits %}
+      <div class="entry">
+        <span class="ip">{{ ip }}</span>
+        <span class="timestamp">{{ ts }}</span>
+        <div class="ua">{{ ua }}</div>
+      </div>
+    {% endfor %}
+  </div>
+</body>
+</html>
