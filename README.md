@@ -126,32 +126,7 @@ sudo apt update && sudo apt-get install terraform
 terraform -version
 ```
 
-# Terraform Project Folder layout
-
-```
-terraform-nginx-pg/
-├─ main.tf
-├─ variables.tf
-├─ outputs.tf
-├─ terraform.tfvars.example
-└─ modules/
-   ├─ network/
-   │  ├─ main.tf
-   │  ├─ variables.tf
-   │  └─ outputs.tf
-   ├─ security/
-   │  ├─ main.tf
-   │  ├─ variables.tf
-   │  └─ outputs.tf
-   └─ compute/
-      ├─ main.tf
-      ├─ variables.tf
-      └─ outputs.tf
-```
-
-
-
-<br/><br/> 
+ <br/><br/> 
 
 # Terraform Code
 
